@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.5.0'
+}
+
+// NOTE: Gradle>>Run Configurations>>run [buildPlugin], output build\distributions .zip file
+group 'com.wjy.plugin'
+version '1.0.0'
+
+repositories {
+    mavenLocal()
+    maven { url "https://maven.aliyun.com/repository/public" }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+//    implementation files('libs/mapper2sql-1.0.1.jar')
+//    implementation files('libs/druid-1.2.23.jar')
+//    implementation files('libs/lombok-1.18.32.jar')
+//    implementation files('libs/mybatis-3.5.1.jar')
+    implementation("com.wjy:mapper2sql:1.0.1") // @see https://github.com/handsomestWei/mybatis-mapper2sql
+    implementation("com.alibaba:druid:1.2.23")
+    implementation("org.mybatis:mybatis:3.5.1")
+    implementation("org.projectlombok:lombok:1.18.32")
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.3.2'
+    pluginName 'mybatis-mapper2sql'
+    updateSinceUntilBuild false
+    sameSinceUntilBuild false
+}
+
+patchPluginXml {
+    changeNotes = """
+      <dl>
+        <dt>1.0.0</dt>
+        <dd>first edition</dd>
+      <dl>
+    """
+}
+
+tasks {
+    // TODO
+    // Memory leak detected: 'org.jetbrains.kotlin.idea.compiler.configuration.KotlinCompilerConfigurableTab
+    // @see https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin-faq.html#how-to-disable-building-searchable-options
+    buildSearchableOptions {
+        enabled = false
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+test {
+    useJUnitPlatform()
+}

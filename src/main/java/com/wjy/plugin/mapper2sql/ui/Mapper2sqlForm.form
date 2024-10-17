@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.wjy.plugin.mapper2sql.ui.Mapper2sqlForm">
+  <grid id="27dc6" binding="jdbcConfigMainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="514" height="293"/>
+    </constraints>
+    <properties>
+      <font/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="f7214" class="javax.swing.JLabel" binding="sqlAutoTestWithLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="217" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="sql auto test with jdbc connect config"/>
+        </properties>
+      </component>
+      <component id="b7a" class="javax.swing.JLabel" binding="driverNameLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="driver name"/>
+        </properties>
+      </component>
+      <component id="e4e62" class="javax.swing.JLabel" binding="jdbcUrlLabel">
+        <constraints>
+          <grid row="5" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="jdbc url"/>
+        </properties>
+      </component>
+      <component id="b412a" class="javax.swing.JTextField" binding="driverNameText">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+          <toolTipText value="must add jdbc driver package into project"/>
+        </properties>
+      </component>
+      <component id="e61e8" class="javax.swing.JTextField" binding="jdbcUrlText">
+        <constraints>
+          <grid row="5" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <toolTipText value="eg. jdbc:dm://xx"/>
+        </properties>
+      </component>
+      <component id="20bde" class="javax.swing.JLabel" binding="dbUserNameLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="db user name"/>
+        </properties>
+      </component>
+      <component id="61997" class="javax.swing.JTextField" binding="dbUserNameText">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="9042d" class="javax.swing.JLabel" binding="dbPasswordLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="db password"/>
+          <toolTipText value="you known"/>
+        </properties>
+      </component>
+      <component id="62e2d" class="javax.swing.JTextField" binding="dbPasswordText">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <toolTipText value="you known"/>
+        </properties>
+      </component>
+      <component id="a1a61" class="javax.swing.JCheckBox" binding="enableMockSqlParamCheckBox">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font/>
+          <text value="Enable mock sql param"/>
+        </properties>
+      </component>
+      <component id="de3f3" class="javax.swing.JCheckBox" binding="enableRunJdbcTestCheckBox" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Enable run jdbc test"/>
+        </properties>
+      </component>
+      <component id="fa22" class="javax.swing.JLabel" binding="dbTypeLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font/>
+          <text value="dbType"/>
+        </properties>
+      </component>
+      <component id="5f618" class="javax.swing.JTextField" binding="dbTypeText">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <toolTipText value="default mysql"/>
+        </properties>
+      </component>
+      <vspacer id="b3e2f">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="1ecf9">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="ae89e">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+    </children>
+  </grid>
+</form>

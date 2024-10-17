@@ -1,0 +1,51 @@
+<idea-plugin>
+    <id>com.wjy.plugin.mapper2sql</id>
+    <name>mybatis mapper2sql</name>
+    <vendor email="tadie666@163.com" url="https://github.com/handsomestWei/">handsomestWei</vendor>
+
+    <description><![CDATA[
+    Automatically extract mybatis mapper XML SQL and output it to the window for display, without relying on dao classes, easily solving the bad taste project. The main functions are as follows:<br/>
+    <ul>
+        <li>Right click and select '提取sql', automatically identify mapper XML and extract SQL, and output the result in the tool window below. Default syntax type mysql (modified in other settings)</li>
+        <li>Automatic mock SQL parameter (enabled in other settings configuration)</li>
+        <li>Automatically test SQL and record execution results (enable and configure JDBC connection in other settings)</li>
+    </ul>
+    <br/>
+    自动提取mybatis mapper xml sql并输出到窗口展示，无需依赖dao class，轻松解决屎山项目。主要功能如下：<br/>
+    <ul>
+        <li>右键选择"提取sql"，自动识别mapper xml和提取sql，在下方tool window输出结果。默认语法类型mysql（在other settings修改）</li>
+        <li>自动mock sql参数（在other settings配置开启）</li>
+        <li>自动测试sql并记录执行结果（在other settings开启并配置jdbc连接）</li>
+    </ul>
+    <br/>
+    <a href="https://github.com/handsomestWei/mybatis-mapper2sql-plugin">Github</a> Welcome to star please
+    <br/>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable instance="com.wjy.plugin.mapper2sql.ui.Mapper2sqlConfigurable"
+                                 id="mybatis-mapper2sql.settings"
+                                 displayName="mybatis-mapper2sql Settings"/>
+        <applicationService serviceImplementation="com.wjy.plugin.mapper2sql.ui.Mapper2sqlSetting"/>
+        <toolWindow id="mybatis-mapper2sql"
+                    factoryClass="com.wjy.plugin.mapper2sql.ui.Mapper2sqlToolWindowFactory" anchor="bottom"/>
+    </extensions>
+
+    <actions>
+        <action id="com.wjy.plugin.mapper2sql.file" class="com.wjy.plugin.mapper2sql.action.ExtractAction" text="提取sql"
+                description="mybatis-mapper2sql提取sql">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="com.wjy.plugin.mapper2sql.project" class="com.wjy.plugin.mapper2sql.action.ExtractAction"
+                text="提取sql" description="mybatis-mapper2sql提取sql">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <idea-version since-build="203.0"/>
+</idea-plugin>
